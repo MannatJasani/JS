@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Js</title>
+</head>
+
+<body>
+    <h1>Shopping </h1>
+    <script>
+        let = thing = prompt("Please Enter What You Bought");
+        let = bill = parseInt(prompt("Please Enter The Total Bill"));
+        var dis;
+
+        switch (thing) {
+            case 's':
+                if (bill >= 0 && bill <= 100) {
+
+                    dis = bill / 100 * 2
+                    bill = bill - dis;
+                } else if (bill >= 101 && bill <= 200) {
+                    dis = bill / 100 * 5
+                    bill = bill - dis;
+                } else if (bill >= 200) {
+                    dis = bill / 100 * 8
+                    bill = bill - dis;
+                }
+                break;
+
+            case 'j':
+                if (bill >= 0 && bill <= 100) {
+                    dis = bill / 100 * 2
+                    bill = bill - dis;
+                } else if (bill >= 101 && bill <= 200) {
+                    dis = bill / 100 * 5
+                    bill = bill - dis;
+                } else if (bill >= 200) {
+                    dis = bill / 100 * 8
+                    bill = bill - dis;
+                }
+                break;
+            case 'b':
+                if (bill >= 0 && bill <= 100) {
+
+                    dis = bill / 100 * 5
+                    bill = bill - dis;
+                } else if (bill >= 101 && bill <= 200) {
+                    dis = bill / 100 * 15
+                    bill = bill - dis;
+                } else if (bill >= 200) {
+                    dis = bill / 100 * 23
+                    bill = bill - dis;
+                }
+                break
+            default:
+                break;
+        }
+
+        console.log(bill + ' ');
+        console.log(dis);
+        document.write(dis + ' ')
+        document.write("<br>")
+        document.write(bill)
+
+
+
+    </script>
+
+</body>
+
+</html>

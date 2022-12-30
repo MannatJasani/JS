@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let movie = prompt("Please Enter The Number Of Movie You Want To See: (1. abc = 120rs, 2. bca = 150rs, 3. aba = 250rs)")
+        let snacks;
+        let dis;
+        let co;
+        let gst;
+        let final1;
+        let final2;
+
+        function m1() {
+
+
+
+            final1 = 120;
+            snacks = parseInt(prompt("Do you Want Any Snacks With It :(1.Popcorn : 150rs, 2.Colddrink 20rs, 3.Both 160rs, press 4 to decline) Please Enter In digit"));
+
+
+
+            switch (snacks) {
+                case 1:
+                    final1 += 150;
+                    break;
+                case 2:
+                    final1 += 20;
+                    break;
+
+                case 3:
+                    final1 += 160;
+                    break;
+
+                case 4:
+                    break;
+
+                default:
+                    break;
+            }
+
+            console.log(final1);
+            return final1
+        }
+
+
+        function m2() {
+
+
+
+            final1 = 150;
+            snacks = parseInt(prompt("Do you Want Any Snacks With It :(1.Popcorn : 150rs, 2.Colddrink 20rs, 3.Both 160rs, press 4 to decline) Please Enter In digit"));
+
+
+
+            switch (snacks) {
+                case 1:
+                    final1 += 150;
+                    break;
+                case 2:
+                    final1 += 20;
+                    break;
+
+                case 3:
+                    final1 += 160;
+                    break;
+
+                case 4:
+                    break;
+
+                default:
+                    break;
+            }
+            console.log(final1);
+            return final1
+
+        }
+
+
+        function m3() {
+
+
+
+            final1 = 250;
+            snacks = parseInt(prompt("Do you Want Any Snacks With It :(1.Popcorn : 150rs, 2.Colddrink 20rs, 3.Both 160rs, press 4 to decline) Please Enter In digit"));
+
+
+
+            switch (snacks) {
+                case 1:
+                    final1 += 150;
+                    break;
+                case 2:
+                    final1 += 20;
+                    break;
+
+                case 3:
+                    final1 += 160;
+                    break;
+
+                case 4:
+                    break;
+
+                default:
+                    break;
+            }
+
+            
+            console.log(final1);
+
+            return final1
+        }
+
+        switch (movie) {
+            case 'abc':
+                final1 = m1()
+                break;
+            case 'bca':
+                final1 = m2()
+                break;
+
+            case 'aba':
+                final1 = m3()
+                break;
+            default:
+                break;
+        }
+
+        co = parseInt(prompt("Please Enter A Coupen Code If You Have One (press 3 to decline)"));
+        if (co == 3) {
+            
+        } else {
+            final1 = Code(co)
+        }
+        
+
+        function Code(co) {
+            switch (co) {
+                case 1011:
+                    dis = final1 / 100 * 10;
+                    final1 = final1 - dis;
+                    break;
+
+                default:
+                    break;
+            }
+            return final1
+        }
+
+         final2 = totalbill(final1)
+
+        function totalbill(final1) {
+            gst = final1 / 100 * 18;
+            final1 = final1 + gst;
+            final2 = final1 + 55;
+            console.log(final2);
+            return final2
+        }
+
+
+        console.log("Your Total Bill is : " + final2);
+    </script>
+</head>
+
+<body>
+    <h1>Movie_Ticket</h1>
+</body>
+
+</html>

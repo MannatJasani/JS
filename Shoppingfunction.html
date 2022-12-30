@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+
+    <script>
+        let item = prompt("Please Enter What You Bought");
+        let bill = parseInt(prompt("Please Enter The Total Bill"));
+        let b;
+
+        function dis_s(bill) {
+            let dis;
+            if (bill >= 0 && bill <= 100) {
+                dis = bill / 100 * 2
+                bill = bill - dis;
+            } else if (bill >= 101 && bill <= 200) {
+                dis = bill / 100 * 5
+                bill = bill - dis;
+            } else if (bill >= 200) {
+                dis = bill / 100 * 8
+                bill = bill - dis;
+            }
+
+            console.log("Discount" + ':' + dis);
+            return bill;
+        }
+
+        function dis_j(bill) {
+            let dis;
+            if (bill >= 0 && bill <= 100) {
+                dis = bill / 100 * 2
+                bill = bill - dis;
+            } else if (bill >= 101 && bill <= 200) {
+                dis = bill / 100 * 5
+                bill = bill - dis;
+            } else if (bill >= 200) {
+                dis = bill / 100 * 8
+                bill = bill - dis;
+            }
+            console.log("Discount" + ':' + dis);
+
+            return bill;
+
+        }
+
+        function dis_b(bill) {
+            let dis;
+            if (bill >= 0 && bill <= 100) {
+                dis = bill / 100 * 5
+                bill = bill - dis;
+            } else if (bill >= 101 && bill <= 200) {
+                dis = bill / 100 * 15
+                bill = bill - dis;
+            } else if (bill >= 200) {
+                dis = bill / 100 * 23
+                bill = bill - dis;
+            }
+            console.log("Discount" + ':' + dis);
+
+            return bill;
+
+        }
+
+        switch (item) {
+            case 's':
+                b = dis_s(bill)
+                break;
+
+            case 'j':
+                b = dis_j(bill)
+                break;
+
+            case 'b':
+                b = dis_b(bill)
+                break
+            default:
+                break;
+        }
+
+        console.log("Your total amount is :" + b);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

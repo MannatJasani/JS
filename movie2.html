@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking</title>
+    <script>
+        let movieName = prompt("Enter Name Which Movie You Want To Watch.(1.A -250 2.B-150 3.C-400)", "Enter Movie Name");
+        let amt;
+        function snacks(ma) {
+
+            let ask = prompt("You want Snake ");
+            let res;
+            let snaka;
+            let sa;
+            let total;
+            switch (ask) {
+                case 'Y': res = 0;
+                    break;
+                case 'N': res = 1;
+                    break;
+                default:
+                    console.log("Enter Valid Choice");
+            }
+            if (res == 0) {
+                snaka = prompt("Popcorn - 150,Colddrink - 20,Both - 160");
+                switch (snaka) {
+                    case 'P':
+                        sa = 150;
+                        total = ma + sa;
+                        coupcode(total);
+                        break;
+                    case 'C':
+                        sa = 20;
+                        total = ma + sa;
+                        coupcode(total);
+                        break;
+                    case 'B':
+                        sa = 180;
+                        total = ma + sa;
+                        coupcode(total);
+                        break;
+                    default:
+                        console.log("Enter Valid Choice");
+
+
+                }
+            } else if (res == 1) {
+                total = ma;
+                coupcode(total);
+            }
+        }
+        function coupcode(total) {
+            let ask1 = prompt("Do You have Coupan Code ?");
+            let res1;
+            let cc;
+            let total1;
+            let dis;
+            switch (ask1) {
+                case 'Y': res1 = 0;
+                    break;
+                case 'N': res1 = 1;
+                    break;
+                default:
+                    console.log("Enter Valid Choice");
+            }
+            if (res1 == 0) {
+                cc = prompt("Enter Coupon Code ");
+                if (cc == '1011') {
+                    dis = total * 0.10;
+                    total1 = total - dis;
+
+                    finalBill(total1);
+                }
+            } else {
+                total1 = total;
+                finalBill(total1);
+            }
+        }
+        function finalBill(fb) {
+            let fbgst;
+            fbgst = fb * 0.18;
+            let fb1 = fb + fbgst + 55;
+            console.log("Final Bill " + fb1);
+
+        }
+        switch (movieName) {
+            case 'A':
+                amt = 250;
+                snacks(amt);
+                break;
+            case 'B':
+                amt = 150;
+                snacks(amt);
+                break;
+            case 'C':
+                amt = 400;
+                snacks(amt);
+                break;
+            default:
+                console.log("Enter Valid Choice");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

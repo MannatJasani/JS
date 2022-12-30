@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <script>
+        let arr = [];
+        function getdata() {
+            let x = document.getElementById("id").value
+            let y = document.getElementById("ProductName").value
+            let z = document.getElementById("ProductPrice").value
+            let a = document.getElementById("Lotsize").value
+
+            let obj = {
+                Id: x,
+                Name: y,
+                Price: z,
+                Lotsize: a
+            }
+
+            let localdata = JSON.parse(localStorage.getItem("product"));
+            if (localdata !== null) {
+                localdata.push(obj);
+                localStorage.setItem("products", JSON.stringify(localdata))
+            } else {
+                localStorage.setItem("products", JSON.stringify([obj]))
+            }
+
+        }
+
+        function deldata() {
+            let x = document.getElementById("Delval").value
+
+            // for (let i in arr) {
+            //     if (arr[i].Id === x) {
+            //         arr.splice(i, 1)
+            //         console.log(arr);
+            //     }
+            // } Done it With For In Loop :_:
+
+
+
+            arr.map((d, i) => {
+                if (d.Id === x) {
+                    arr.splice(i, 1)
+                    console.log(arr);
+                }
+            })
+        }
+
+
+        function updatedata() {
+            let ui = document.getElementById("uid").value
+            let un = document.getElementById("uProductName").value
+            let up = document.getElementById("uProductPrice").value
+            let ul = document.getElementById("uLotsize").value
+
+            arr.map((d, i) => {
+                if (d.Id === uid) {
+                    let obj = {
+                        id:uid,
+                        Name: uProductname,
+                        Price: uProductPrice,
+                        Lotsize: uLotsize
+                    }
+
+                    arr[i] = uid;
+                    console.log(arr);
+                }
+            })
+
+            console.log(arr);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form action="" onsubmit="getdata()">
+        Product id <input type="number" id="id" placeholder="id"> <br />
+        Product Name <input type="text" id="ProductName" placeholder="Product Name"> <br />
+        ProductPrice <input type="number" id="ProductPrice" placeholder="Product Price"><br />
+        Lot Size <input type="number" name="" id="Lotsize" placeholder="Lot Size"> <br />
+        <button type="submit">submit</button>
+    </form>
+
+
+    <form action="" onsubmit="deldata()">
+        <br /> Please Enter The Id You Want to Delete Value Of <br /> <input type="number" name="" id="Delval"
+            placeholder="Enter The Id">
+        <button type="submit">submit</button>
+        <br> <br>
+    </form>
+
+
+    <form action="" onsubmit="">
+        Please Enter id You want To Updatedata Of <br> <input type="number" id="uid" placeholder="id"> <br />
+        Product Name <input type="text" id="uProductName" placeholder="Product Name"> <br />
+        ProductPrice <input type="number" id="uProductPrice" placeholder="Product Price"><br />
+        Lot Size <input type="number" name="" id="uLotsize" placeholder="Lot Size"> <br />
+        <button type="submit" onclick="updatedata()">submit</button>
+
+
+    </form>
+
+
+</body>
+
+</html>
